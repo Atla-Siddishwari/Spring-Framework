@@ -1,0 +1,28 @@
+package com;
+
+import org.springframework.beans.factory.BeanFactory;
+import org.springframework.beans.factory.xml.XmlBeanFactory;
+import org.springframework.core.io.ClassPathResource;
+import org.springframework.core.io.Resource;
+
+public class DemoTest {
+
+	public static void main(String[] args) {
+	//Resource res=new ClassPathResource("beans.xml");
+	//BeanFactory bean=new XmlBeanFactory(res);
+		
+		
+		BeanFactory bean=new XmlBeanFactory(new ClassPathResource("beans.xml"));
+		Employee emp=(Employee)bean.getBean("emp1");
+		emp.display();
+		
+		Employee e2=(Employee)bean.getBean("emp2");
+		e2.display();
+		
+	
+	
+	
+
+	}
+
+}
